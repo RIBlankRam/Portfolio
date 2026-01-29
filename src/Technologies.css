@@ -1,0 +1,244 @@
+/* =========================
+   SECCIÓN GENERAL
+========================= */
+.technologies-section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 3rem 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* animación */
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change:auto;
+  isolation: isolate;
+  }
+
+.technologies-section.enter {
+  opacity: 1;
+  transform: translateY(0);
+    will-change: opacity, transform;
+
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.Technologies-layout {
+  width: 100%;
+    isolation: isolate;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* =========================
+   HEADER
+========================= */
+.Technologies-top {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.Technologies-top h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: "Press Start 2P", system-ui;
+  letter-spacing: 1px;
+  color: white;
+
+  animation: sutleBlurN 4.5s ease-in-out infinite;
+}
+
+/* Línea */
+.Technologies-top h2::after {
+  content: "";
+  width: 300px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  margin: 2rem auto 0;
+  border-radius: 3px;
+}
+
+.Technologies-top h2,
+.tech-block h3 {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* =========================
+   GRID
+========================= */
+.tech-row {
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+    isolation: isolate;
+
+}
+
+.tech-row.single {
+  grid-template-columns: 1fr;
+}
+
+/* =========================
+   BLOCKS
+========================= */
+.tech-block {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 2.2rem;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.tech-block h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 1.8rem;
+    animation: sutleBlurN 4.5s ease-in-out infinite;
+
+}
+
+/* =========================
+   ICONS
+========================= */
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 2.6rem;
+}
+
+.tech-icons svg {
+  border: 2px solid white;
+  color:white;
+  border-radius: 10px;
+  padding: 0.6rem;
+  
+
+   transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.tech-icons svg:hover {
+  transform: translateY(-5px) scale(1.12);
+  color: black !important;  
+  background-color: white !important;
+}
+
+/* =========================
+   ICON COLORS
+========================= */
+.tech-icons svg[data-icon="react"] { background-color: #61dafb; }
+.tech-icons svg[data-icon="typescript"]  { background-color: #3178c6; }
+.tech-icons svg[data-icon="javascript"] { background-color: #f7df1e; color: white; }
+.tech-icons svg[data-icon="html"] { background-color: #e34f26; }
+.tech-icons svg[data-icon="css"] { background-color: #1572b6; }
+.tech-icons svg[data-icon="tailwind"] { background-color: #38bdf8; }
+.tech-icons svg[data-icon="node"] { background-color: #339933; }
+.tech-icons svg[data-icon="express"] { background-color: #000; }
+.tech-icons svg[data-icon="postgresql"] { background-color: #4169e1; }
+.tech-icons svg[data-icon="mysql"] { background-color: #4479a1; }
+.tech-icons svg[data-icon="firebase"] { background-color: #ffca28; color: #000; }
+.tech-icons svg[data-icon="cplusplus"] { background-color: #00599c; }
+.tech-icons svg[data-icon="python"] { background-color: #3776ab; }
+.tech-icons svg[data-icon="git"] { background-color: #f05032; }
+.tech-icons svg[data-icon="github"] { background-color: #000; }
+.tech-icons svg[data-icon="vite"] { background-color: #646cff; }
+.tech-icons svg[data-icon="npm"] { background-color: #cb3837; }
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes sutleBlurN {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.45),
+      0 0 16px rgba(255, 255, 255, 0.35),
+      0 0 32px rgba(255, 255, 255, 0.25);
+  }
+
+  50% {
+    text-shadow:
+      0 0 14px rgba(255, 255, 255, 1),
+      0 0 34px rgba(255, 255, 255, 0.85),
+      0 0 70px rgba(255, 255, 255, 0.65);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .technologies-section {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  /* Título */
+  .Technologies-top h2 {
+    font-size: 1.8rem;
+  }
+
+  .Technologies-top h2::after {
+    width: 180px;
+    margin-top: 1.2rem;
+  }
+
+  /* GRID → SCROLL HORIZONTAL */
+  .tech-row {
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tech-row.single {
+    flex-direction: row;
+  }
+
+  /* Tarjetas */
+  .tech-block {
+    min-width: 85%;
+    padding: 1.6rem;
+    scroll-snap-align: center;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+  }
+
+  .tech-block h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Íconos */
+  .tech-icons {
+    gap: 1rem;
+    font-size: 2.1rem;
+  }
+
+  .tech-icons svg {
+    padding: 0.45rem;
+    border-width: 1.5px;
+  }
+
+}

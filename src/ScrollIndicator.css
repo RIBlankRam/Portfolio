@@ -1,0 +1,42 @@
+.scroll-projects1 {
+  margin-top: 0rem;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-projects1 a {
+  margin-top: -3rem;
+  text-decoration: none;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.scroll-projects1 a:hover {
+  color: #fff;
+}
+
+.arrow-down { margin-top: 0rem;
+  font-size: 1.4rem;
+
+  animation: bounce 2.2s cubic-bezier(.4,0,.2,1) infinite;
+
+  /* OPTIMIZACIÓN */
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}

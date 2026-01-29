@@ -1,0 +1,231 @@
+/* =========================
+   SECCIÓN GENERAL (ANIMACIÓN)
+========================= */
+.projects-section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 5rem 6rem;
+  contain: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  /* animación */
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+.projects-section.enter {
+    will-change: opacity, transform;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   LAYOUT PRINCIPAL (CENTRADO REAL)
+========================= */
+.Projects-layout {
+  width: 100%;
+  max-width: 1200px;
+  isolation:isolate;
+  margin: 0 auto; /* 🔴 ESTO ES LO QUE FALTABA */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   HEADER (TÍTULO)
+========================= */
+.Projects-top {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.Projects-top h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: "Press Start 2P", system-ui;
+  position: relative;
+  letter-spacing: 1px;
+  margin: 0;
+  color: white;
+
+  animation: subtleBlur 4s ease-in-out infinite;
+}
+
+/* Línea debajo del título */
+.Projects-top h2::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  margin: 1rem auto 0;
+  border-radius: 3px;
+}
+
+/* =========================
+   CONTENEDOR DE PROYECTOS
+========================= */
+.projects-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.2rem;
+
+  border-radius: 18px;
+  padding: 2rem;
+contain:none;
+}
+
+/* =========================
+   CARD DE PROYECTO
+========================= */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border-radius: 18px;
+  padding: 1.6rem;
+
+  box-shadow:
+    0 8px 20px rgba(255, 242, 0, 0.72),
+    0 0 10px rgba(255, 180, 60, 0.74);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+   IMAGEN
+========================= */
+.project-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 14px;
+  object-fit: cover;
+  filter: none;
+
+  
+  transition: filter 0.4s ease, transform 0.4s ease;
+  transform: translateZ(0);
+}
+
+.project-card:hover .project-image {
+  filter: blur(0);
+  transform: scale(1.05);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+    isolation: isolate;
+
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+/* =========================
+   TEXTO
+========================= */
+.project-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-description {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: -1px;
+  opacity: 0.85;
+}
+
+/* =========================
+   TAGS
+========================= */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tags span {
+  font-size: 0.75rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .projects-section {
+    padding: 4rem 2rem;
+  }
+
+  .projects-container{
+
+    margin-right:1rem;
+  }
+  .project-card{
+ margin-right: 1rem;
+  }
+  .Projects-top h2 {
+    margin-left: 0.8rem;
+    font-size: 2rem;
+  }
+}
+
+/* =========================
+   ANIMACIÓN TEXTO
+========================= */
+@keyframes subtleBlur {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.45),
+      0 0 16px rgba(255, 255, 255, 0.35),
+      0 0 32px rgba(255, 255, 255, 0.25);
+  }
+
+  50% {
+    text-shadow:
+      0 0 14px rgba(255, 255, 255, 1),
+      0 0 34px rgba(255, 255, 255, 0.85),
+      0 0 70px rgba(255, 255, 255, 0.65);
+  }
+}

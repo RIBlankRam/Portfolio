@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+
+  /* ❌ ELIMINAR smooth global */
+  scroll-behavior: auto;
+}
+
+/* Root NO necesita height fijo */
+#root {
+  width: 100%;
+}
+
+/* Ocultar scrollbar sin afectar layout */
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
