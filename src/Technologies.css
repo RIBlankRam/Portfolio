@@ -10,22 +10,20 @@
   justify-content: center;
   align-items: center;
 
-  /* animación */
   opacity: 0;
   transform: translateY(50px);
   transition:
     opacity 0.6s ease,
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
-  will-change:auto;
+  will-change: auto;
   isolation: isolate;
-  }
+}
 
 .technologies-section.enter {
   opacity: 1;
   transform: translateY(0);
-    will-change: opacity, transform;
-
+  will-change: opacity, transform;
 }
 
 /* =========================
@@ -33,7 +31,7 @@
 ========================= */
 .Technologies-layout {
   width: 100%;
-    isolation: isolate;
+  isolation: isolate;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Courier New', Courier, monospace;
@@ -53,11 +51,9 @@
   font-family: "Press Start 2P", system-ui;
   letter-spacing: 1px;
   color: white;
-
   animation: sutleBlurN 4.5s ease-in-out infinite;
 }
 
-/* Línea */
 .Technologies-top h2::after {
   content: "";
   width: 300px;
@@ -78,13 +74,11 @@
    GRID
 ========================= */
 .tech-row {
-  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   margin-bottom: 3rem;
-    isolation: isolate;
-
+  isolation: isolate;
 }
 
 .tech-row.single {
@@ -107,8 +101,7 @@
   color: white;
   font-size: 1.4rem;
   margin-bottom: 1.8rem;
-    animation: sutleBlurN 4.5s ease-in-out infinite;
-
+  animation: sutleBlurN 4.5s ease-in-out infinite;
 }
 
 /* =========================
@@ -124,18 +117,17 @@
 
 .tech-icons svg {
   border: 2px solid white;
-  color:white;
+  color: white;
   border-radius: 10px;
   padding: 0.6rem;
-  
-
-   transform: translateZ(0);
+  transform: translateZ(0);
   backface-visibility: hidden;
+  transition: all 0.25s ease;
 }
 
 .tech-icons svg:hover {
   transform: translateY(-5px) scale(1.12);
-  color: black !important;  
+  color: black !important;
   background-color: white !important;
 }
 
@@ -143,7 +135,7 @@
    ICON COLORS
 ========================= */
 .tech-icons svg[data-icon="react"] { background-color: #61dafb; }
-.tech-icons svg[data-icon="typescript"]  { background-color: #3178c6; }
+.tech-icons svg[data-icon="typescript"] { background-color: #3178c6; }
 .tech-icons svg[data-icon="javascript"] { background-color: #f7df1e; color: white; }
 .tech-icons svg[data-icon="html"] { background-color: #e34f26; }
 .tech-icons svg[data-icon="css"] { background-color: #1572b6; }
@@ -152,6 +144,7 @@
 .tech-icons svg[data-icon="express"] { background-color: #000; }
 .tech-icons svg[data-icon="postgresql"] { background-color: #4169e1; }
 .tech-icons svg[data-icon="mysql"] { background-color: #4479a1; }
+.tech-icons svg[data-icon="mongodb"] { background-color: #47a248; }
 .tech-icons svg[data-icon="firebase"] { background-color: #ffca28; color: #000; }
 .tech-icons svg[data-icon="cplusplus"] { background-color: #00599c; }
 .tech-icons svg[data-icon="python"] { background-color: #3776ab; }
@@ -159,6 +152,14 @@
 .tech-icons svg[data-icon="github"] { background-color: #000; }
 .tech-icons svg[data-icon="vite"] { background-color: #646cff; }
 .tech-icons svg[data-icon="npm"] { background-color: #cb3837; }
+
+/* 🔥 NUEVOS ICONOS */
+.tech-icons svg[data-icon="docker"] { background-color: #2496ed; }
+.tech-icons svg[data-icon="postman"] { background-color: #ff6c37; }
+.tech-icons svg[data-icon="azure"] { background-color: #0078d4; }
+.tech-icons svg[data-icon="ubuntu"] { background-color: #e95420; }
+.tech-icons svg[data-icon="vercel"] { background-color: #000; }
+.tech-icons svg[data-icon="render"] { background-color: #46e3b7; }
 
 /* =========================
    ANIMATION
@@ -179,7 +180,6 @@
   }
 }
 
-
 /* =========================
    RESPONSIVE MOBILE
 ========================= */
@@ -190,7 +190,6 @@
     min-height: auto;
   }
 
-  /* Título */
   .Technologies-top h2 {
     font-size: 1.8rem;
   }
@@ -200,13 +199,11 @@
     margin-top: 1.2rem;
   }
 
-  /* GRID → SCROLL HORIZONTAL */
   .tech-row {
     display: flex;
     gap: 1.2rem;
     overflow-x: auto;
     padding-bottom: 1rem;
-
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
@@ -215,12 +212,10 @@
     flex-direction: row;
   }
 
-  /* Tarjetas */
   .tech-block {
     min-width: 85%;
     padding: 1.6rem;
     scroll-snap-align: center;
-
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(6px);
   }
@@ -230,7 +225,6 @@
     margin-bottom: 1.2rem;
   }
 
-  /* Íconos */
   .tech-icons {
     gap: 1rem;
     font-size: 2.1rem;
@@ -240,5 +234,4 @@
     padding: 0.45rem;
     border-width: 1.5px;
   }
-
 }
