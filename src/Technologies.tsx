@@ -8,7 +8,8 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
-  FaPython
+  FaPython,
+    FaMicrosoft
 } from "react-icons/fa";
 
 import {
@@ -18,10 +19,16 @@ import {
   SiExpress,
   SiPostgresql,
   SiMysql,
+  SiMongodb,
   SiFirebase,
   SiCplusplus,
   SiVite,
-  SiNpm
+  SiNpm,
+  SiDocker,
+  SiPostman,
+  SiUbuntu,
+  SiVercel,
+  SiRender
 } from "react-icons/si";
 
 import "./Technologies.css";
@@ -71,6 +78,7 @@ function Technologies(): JSX.Element {
             <div className="tech-icons">
               <SiPostgresql data-icon="postgresql" />
               <SiMysql data-icon="mysql" />
+              <SiMongodb data-icon="mongodb" />
               <SiFirebase data-icon="firebase" />
             </div>
           </div>
@@ -87,14 +95,26 @@ function Technologies(): JSX.Element {
         </div>
 
         {/* ROW 3 */}
-        <div className="tech-row single">
+        <div className="tech-row">
           <div className="tech-block">
-            <h3>Tools & Workflow</h3>
+            <h3>Cloud & DevOps</h3>
+            <div className="tech-icons">
+              <FaMicrosoft data-icon="azure" />
+              <SiDocker data-icon="docker" />
+              <SiUbuntu data-icon="ubuntu" />
+            </div>
+          </div>
+
+          <div className="tech-block">
+            <h3>Tools & Deployment</h3>
             <div className="tech-icons">
               <FaGitAlt data-icon="git" />
               <FaGithub data-icon="github" />
               <SiVite data-icon="vite" />
               <SiNpm data-icon="npm" />
+              <SiPostman data-icon="postman" />
+              <SiVercel data-icon="vercel" />
+              <SiRender data-icon="render" />
             </div>
           </div>
         </div>
